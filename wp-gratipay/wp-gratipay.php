@@ -1,33 +1,28 @@
 <?php
 /*
-	Plugin Name: WP Gittip
-	Plugin URI: http://daan.kortenba.ch/wp-gittip
+ *	Plugin Name: WP Gratipay
+ *	Plugin URI: https://github.com/KakersUK/WP-Gratipay
+ *	Description: WP Gratipay allows you to display a Gratipay widget on your site.
+ *	Version: 1.1
+ *	Author: Jamie Scott
+ *	Author URI: http://www.kakersuk.com/
+ *	License: GPL2
+ */
 
-	Description: WP Gittip allows you to display a Gittip widget on your site.
-
-	Author: Daan Kortenbach
-	Author URI: http://daan.kortenba.ch/
-
-	Version: 1.0
-
-	License: GNU General Public License v2.0 (or later)
-	License URI: http://www.opensource.org/licenses/gpl-license.php
-*/
-
-add_action( 'widgets_init', 'wp_gittip_load_widget' );
+add_action( 'widgets_init', 'wp_gratipay_load_widget' );
 /**
  * Register widget
  */
-function wp_gittip_load_widget() {
+function wp_gratipay_load_widget() {
 
-	register_widget( 'WP_Gittip_Widget' );
+	register_widget( 'WP_Gratipay_Widget' );
 
 }
 
 /**
- * WP Gittip widget class.
+ * WP Gratipay widget class.
  */
-class WP_Gittip_Widget extends WP_Widget {
+class WP_Gratipay_Widget extends WP_Widget {
 
 	/**
 	 * Holds widget settings defaults, populated in constructor.
@@ -43,21 +38,21 @@ class WP_Gittip_Widget extends WP_Widget {
 
 		$this->defaults = array(
 			'title'           => '',
-			'gittip_username' => '',
+			'gratipay_username' => '',
 		);
 
 		$widget_ops = array(
-			'classname'   => 'wp-gittip',
-			'description' => __( 'Displays a Gittip widget', 'wpgittip' ),
+			'classname'   => 'wp-gratipay',
+			'description' => __( 'Displays a Gratipay widget', 'wpgratipay' ),
 		);
 
 		$control_ops = array(
-			'id_base' => 'wp-gittip',
+			'id_base' => 'wp-gratipay',
 			'width'   => 200,
 			'height'  => 250,
 		);
 
-		parent::__construct( 'wp-gittip', __( 'WP Gittip', 'wpgittip' ), $widget_ops, $control_ops );
+		parent::__construct( 'wp-gratipay', __( 'WP Gratipay', 'wpgratipay' ), $widget_ops, $control_ops );
 
 	}
 
@@ -79,7 +74,7 @@ class WP_Gittip_Widget extends WP_Widget {
 			if ( ! empty( $instance['title'] ) )
 				echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
 
-			printf( '<script data-gittip-username="%s" src="https://www.gittip.com/assets/widgets/0002.js"></script>', $instance['gittip_username'] );
+			printf( '<script data-gratipay-username="%s" src="//grtp.co/v1.js"></script>', $instance['gratipay_username'] );
 
 		echo $after_widget;
 
@@ -99,7 +94,7 @@ class WP_Gittip_Widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 
 		$new_instance['title']           = strip_tags( $new_instance['title'] );
-		$new_instance['gittip_username'] = strip_tags( $new_instance['gittip_username'] );
+		$new_instance['gratipay_username'] = strip_tags( $new_instance['gratipay_username'] );
 
 		return $new_instance;
 
@@ -117,13 +112,13 @@ class WP_Gittip_Widget extends WP_Widget {
 
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wpgittip' ); ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'wpgratipay' ); ?>:</label>
 			<input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $instance['title'] ); ?>" class="widefat" />
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'gittip_username' ); ?>"><?php _e( 'Gittip username', 'wpgittip' ); ?>:</label>
-			<input type="text" id="<?php echo $this->get_field_id( 'gittip_username' ); ?>" name="<?php echo $this->get_field_name( 'gittip_username' ); ?>" value="<?php echo esc_attr( $instance['gittip_username'] ); ?>" class="widefat" />
+			<label for="<?php echo $this->get_field_id( 'gratipay_username' ); ?>"><?php _e( 'Gratipay username', 'wpgratipay' ); ?>:</label>
+			<input type="text" id="<?php echo $this->get_field_id( 'gratipay_username' ); ?>" name="<?php echo $this->get_field_name( 'gratipay_username' ); ?>" value="<?php echo esc_attr( $instance['gratipay_username'] ); ?>" class="widefat" />
 		</p>
 
 		<?php
