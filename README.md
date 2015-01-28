@@ -1,11 +1,11 @@
 # WP Gittip #
 
-**Contributors:** daankortenbach, KakersUK
-**Tags:** Gratipay, Gittip, widget
-**Requires at least:** 3.0.1
-**Tested up to:** 4.1
-**Stable tag:** 1.1
-**License:** GPL2
+**Contributors:** daankortenbach, KakersUK  
+**Tags:** Gratipay, Gittip, widget  
+**Requires at least:** 3.0.1  
+**Tested up to:** 4.1  
+**Stable tag:** 1.1  
+**License:** GPL2  
 **License URI:** http://www.opensource.org/licenses/gpl-license.php
 
 ## Description ##
