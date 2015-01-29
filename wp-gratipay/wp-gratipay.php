@@ -1,8 +1,8 @@
 <?php
 /*
- *	Plugin Name: WP Gratipay
+ *	Plugin Name: WP-Gratipay
  *	Plugin URI: https://github.com/KakersUK/WP-Gratipay
- *	Description: WP Gratipay allows you to display a Gratipay widget on your site.
+ *	Description: WP-Gratipay allows you to display a Gratipay widget on your site.
  *	Version: 1.1
  *	Author: Jamie Scott
  *	Author URI: http://www.kakersuk.com/
@@ -20,7 +20,7 @@ function wp_gratipay_load_widget() {
 }
 
 /**
- * WP Gratipay widget class.
+ * WP-Gratipay widget class.
  */
 class WP_Gratipay_Widget extends WP_Widget {
 
