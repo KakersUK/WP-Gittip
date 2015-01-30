@@ -10,12 +10,25 @@
  */
 
 add_action( 'widgets_init', 'wp_gratipay_load_widget' );
+add_shortcode('gratipay', 'wp_gratipay_shortcode');
+
 /**
  * Register widget
  */
 function wp_gratipay_load_widget() {
 
 	register_widget( 'WP_Gratipay_Widget' );
+
+}
+
+function wp_gratipay_shortcode($atts) {
+
+	$atts = shortcode_atts(
+		array(
+			'username' => '',
+		), $atts);
+
+	return '<script data-gratipay-username="' . $atts['username'] .'" src="//grtp.co/v1.js"></script>';
 
 }
 
