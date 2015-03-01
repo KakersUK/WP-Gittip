@@ -3,19 +3,32 @@
  *	Plugin Name: WP-Gratipay
  *	Plugin URI: https://github.com/KakersUK/WP-Gratipay
  *	Description: WP-Gratipay allows you to display a Gratipay widget on your site.
- *	Version: 1.1
+ *	Version: 1.2
  *	Author: Jamie Scott
  *	Author URI: http://www.kakersuk.com/
  *	License: GPL2
  */
 
 add_action( 'widgets_init', 'wp_gratipay_load_widget' );
+add_shortcode('gratipay', 'wp_gratipay_shortcode');
+
 /**
  * Register widget
  */
 function wp_gratipay_load_widget() {
 
 	register_widget( 'WP_Gratipay_Widget' );
+
+}
+
+function wp_gratipay_shortcode($atts) {
+
+	$atts = shortcode_atts(
+		array(
+			'username' => '',
+		), $atts);
+
+	return '<script data-gratipay-username="' . $atts['username'] .'" src="//grtp.co/v1.js"></script>';
 
 }
 
