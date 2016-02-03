@@ -28,7 +28,7 @@ function wp_gratipay_shortcode($atts) {
 			'username' => '',
 		), $atts);
 
-	return '<script data-gratipay-username="' . $atts['username'] .'" src="//grtp.co/v1.js"></script>';
+	return '<script data-gratipay-username="' . htmlspecialchars($atts['username']) .'" src="//grtp.co/v1.js"></script>';
 
 }
 
