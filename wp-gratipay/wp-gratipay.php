@@ -28,7 +28,7 @@ function wp_gratipay_shortcode($atts) {
 			'username' => '',
 		), $atts);
 
-	return '<script data-gratipay-username="' . htmlspecialchars($atts['username']) .'" src="//grtp.co/v1.js"></script>';
+	return '<script data-gratipay-username="' . esc_attr( $atts['username'] ) .'" src="//grtp.co/v1.js"></script>';
 
 }
 
@@ -87,7 +87,7 @@ class WP_Gratipay_Widget extends WP_Widget {
 			if ( ! empty( $instance['title'] ) )
 				echo $before_title . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $after_title;
 
-			printf( '<script data-gratipay-username="%s" src="//grtp.co/v1.js"></script>', $instance['gratipay_username'] );
+			printf( '<script data-gratipay-username="%s" src="//grtp.co/v1.js"></script>', esc_attr( $instance['gratipay_username'] ) );
 
 		echo $after_widget;
 
