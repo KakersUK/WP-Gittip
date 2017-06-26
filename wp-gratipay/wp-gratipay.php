@@ -5,7 +5,7 @@
  *	Description: WP-Gratipay allows you to display a Gratipay widget on your site.
  *	Version: 1.2.2
  *	Author: Jamie Scott
- *	Author URI: http://kakers.uk/
+ *	Author URI: https://kakers.uk/
  *	License: GPL2
  */
 
