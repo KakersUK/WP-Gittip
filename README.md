@@ -1,6 +1,6 @@
 # WP-Gratipay #
 
-**Contributors:** daankortenbach, KakersUK
+**Contributors:** daankortenbach, KakersUK  
 **Tags:** gratipay, gittip, donation, widget  
 **Requires at least:** 3.0.1  
 **Tested up to:** 4.1  
