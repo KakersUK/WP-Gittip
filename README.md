@@ -1,11 +1,10 @@
 # WP-Gratipay #
 
-**Contributors:** daankortenbach, KakersUK  
-**Donate link:** https://gratipay.com/ETKCodex/  
+**Contributors:** daankortenbach, KakersUK
 **Tags:** gratipay, gittip, donation, widget  
 **Requires at least:** 3.0.1  
 **Tested up to:** 4.1  
-**Stable tag:** 1.2  
+**Stable tag:** 1.2.2
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +23,12 @@ It's super easy to use, just install, activate, drag the widget in a sidebar and
 1. Get tips!
 
 ## Changelog ##
+
+## 1.2.2 ##
+* Bug fix for possible privilege escalation and swapped htmlspecialchars for WP's esc_attr function. - Thanks @nashe
+
+## 1.2.1 ##
+* Bug fix to prevent XSS in shortchode - Thanks @0xibram
 
 ## 1.2 ##
 * Added shortcode. Usage [gratipay username=""]
